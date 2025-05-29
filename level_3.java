@@ -1,0 +1,89 @@
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("\n"+"Задача 1:");
+
+        /*TODO 1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
+            С помощью цикла и условия заменить 0 на 1, 1 на 0;*/
+        int[] array1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        for (int i = 0; i < array1.length; i++) {
+
+            if( array1[i] == 1 ) {
+                array1[i] = 0;
+            } else {
+                array1[i] = 1;
+            }
+            System.out.print(array1[i]+" ");
+        }
+        System.out.println("\n"+"Задача 2:");
+
+
+
+        /*TODO 2. Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить
+         * его значениями 1 2 3 4 5 6 7 8 … 100;**/
+        int[] array2 = new int[100];
+        for (int h = 0; h < 100; h++) {
+            array2[h]=h+1;
+            System.out.print(array2[h]+" ");
+        }
+        System.out.println("\n"+"Задача 3:");
+
+
+
+        /*TODO 3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ]
+         * пройти по нему циклом, и числа меньшие 6 умножить на 2;*/
+        int[] array3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
+        for (int a = 0; a < array3.length; a++) {
+            if(array3[a] < 6 ) {
+                array3[a] *=2;
+            }
+            System.out.print(array3[a]+" ");
+        }
+        System.out.println("\n"+"Задача 4:");
+
+
+
+        /*TODO 4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое), и с помощью
+         * цикла(-ов) заполнить его диагональные элементы единицами (можно только одну из диагоналей, если обе сложно).
+         * Определить элементы одной из диагоналей можно по следующему принципу: индексы таких элементов равны, то есть
+         * [0][0], [1][1], [2][2], …, [n][n];*/
+        int[][] array4 = new int[5][5];
+        for (int d = 0; d < array4.length; d++) {
+            for (int c = 0; c < array4.length; c++) {
+                if (d==c){
+                    array4[d][c] = 1;
+                }else if ((d+c)==array4.length-1){
+                    array4[d][c] = 1;
+                }
+                System.out.print(array4[d][c]+" ");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\n Задача 5:");
+        System.out.println(lenValue(5, 5));
+
+
+
+        System.out.println("\n Задача 6:");
+        /*TODO 6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы ;*/
+        int[] array5 = {4, 5, 1, 2, 6, 4, 6, 2, 9, 1};
+        for (int z = 0; z < array5.length; z++) {
+            int min;int max;
+            System.out.print(array5[z]+" ");
+        }
+    }
+
+
+    /*TODO 5. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный
+           массив типа int длиной len, каждая ячейка которого равна initialValue;*/
+    static public int lenValue(int len, int initialValue){
+        int[] array = new int[len];
+        len--;
+        for (int i = 0; i < len; i++) {
+            array[i] = initialValue;;
+            System.out.print(array[i]+" ");
+        }
+        return array[len-1];
+    }
+}
