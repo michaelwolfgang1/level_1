@@ -68,9 +68,16 @@ public class Main {
         System.out.println("\n Задача 6:");
         /*TODO 6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы ;*/
         int[] array5 = {4, 5, 1, 2, 6, 4, 6, 2, 9, 1};
+        int max = array5[0];int min = array5[0];
         for (int z = 0; z < array5.length; z++) {
-            int min;int max;
-            System.out.print(array5[z]+" ");
+            if ( array5[z] > max) {
+                max = array5[z];
+            } else if ( array5[z] < min) {
+                min = array5[z];
+            }
+        }
+        System.out.print(max + " Максимум\n");
+        System.out.print(min + " Минимум");
         }
     }
 
