@@ -132,19 +132,19 @@ public class Main {
     public static int[] tikitaki (int[] array, int n) {
         if (n > 0) {
             for (int i = 0; i < n; i++) {
-                int first = array[array.length - 1];
+                int lastArl = array[array.length - 1];
                 for (int j = array.length - 1; j > 0; j--) {
                     array[j] = array [j - 1];
                 }
-                array[0] = first;
+                array[0] = lastArl;
             }
         } else if (n < 0) {
             for (int i = 0; i > n; i--) {
-                int last = array[0];
+                int firstArl = array[0];
                 for (int j = 0; j < array.length - 1; j++) {
                     array[j] = array [j + 1];
                 }
-                array[array.length - 1] = last;
+                array[array.length - 1] = firstArl;
             }
         }
         return array;
