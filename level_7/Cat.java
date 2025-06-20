@@ -8,6 +8,8 @@ public class Cat {
         this.appetite = appetite;
         this.satiety = false;
     }
+    //TODO 3. Каждому коту нужно добавить поле сытость (когда создаем котов, они голодны). Если коту удалось
+    // покушать (хватило еды), сытость = true.
 
     public void eat(Plate plate) {
         if(!satiety) {
