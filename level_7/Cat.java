@@ -1,22 +1,29 @@
 public class Cat {
     private String name;
     private int appetite;
-    private boolean hungry;
+    private boolean satiety;
 
     public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
-        this.hungry = false;
+        this.satiety = false;
     }
 
     public void eat(Plate plate) {
-        plate.removedFood(appetite);
+        if(!satiety) {
+            if (plate.removedFood(appetite)) {
+                satiety = true;
+            }
+        }
     }
 
-    public void isHungry(Plate plate) {
-        plate.checkHungry(hungry);
+    public boolean isHungry() {
+        return  satiety;
     }
     public void info(){
-        System.out.println(name + " \n Аппетит==>" + appetite + " \n Голодный?==>" + hungry);
+        System.out.println(name + " \n Аппетит==>" + appetite + " \n Голодный?==>" + satiety);
+    }
+    public String getName() {
+        return name;
     }
 }
